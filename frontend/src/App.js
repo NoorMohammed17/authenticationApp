@@ -11,9 +11,12 @@ import EventsRootLayout from "./pages/EventsRoot";
 import HomePage from "./pages/Home";
 import NewEventPage from "./pages/NewEvent";
 import RootLayout from "./pages/Root";
-import AuthenticationPage, {action as authAuction} from "./pages/Authentication";
+import AuthenticationPage, {
+  action as authAuction,
+} from "./pages/Authentication";
 import { action as manipulateEventAction } from "./components/EventForm";
 import NewsletterPage, { action as newsletterAction } from "./pages/Newsletter";
+import { clearLocalStorageAction } from "./pages/Logout";
 
 const router = createBrowserRouter([
   {
@@ -22,10 +25,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: "auth", 
-      element: <AuthenticationPage />,
-      action :authAuction,
-     },
+      { path: "auth", element: <AuthenticationPage />, action: authAuction },
       {
         path: "events",
         element: <EventsRootLayout />,
@@ -64,6 +64,7 @@ const router = createBrowserRouter([
         element: <NewsletterPage />,
         action: newsletterAction,
       },
+      { path: "logout", action: clearLocalStorageAction },
     ],
   },
 ]);
