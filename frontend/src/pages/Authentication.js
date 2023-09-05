@@ -46,5 +46,11 @@ export async function action({ request }) {
   localStorage.setItem('token', token);
 
   //soon : manage the token
+
+  const expiration = new Date();
+  expiration.setHours(expiration.getHours() + 1);
+  localStorage.setItem('expiration' , expiration.toISOString());
+  // to expire the token based on login time;
+  
   return redirect("/");
 }
