@@ -15,11 +15,11 @@ React Router  which enables "client side routing".
 4) Navigate
 
 ### some of the hooks includes
-1)useNaviagtion
-2)useNaviagte
-3)useLoaderData
-4)useParams
-5)useSearchParams
+1) useNaviagtion
+2) useNaviagte
+3) useLoaderData
+4) useParams
+5) useSearchParams
 
    
    
